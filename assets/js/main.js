@@ -1,8 +1,13 @@
 import k from "./kaboom.js"
 import pickup from "./pickup.js"
+import loadLevel from "./LoadLevel.js";
 
 loadSprite("santa", "./assets/sprites/santa.png");
 loadSprite("enemy", "./assets/sprites/enemy.png");
+
+
+
+const tile = loadSprite("tile", "./assets/sprites/tile.png");
 
 const SANTA_SPEED = 200;
 
@@ -14,6 +19,48 @@ const santa = add([
 ]);
 
 loadSound("jump", "./assets/sfx/jump.wav");
+
+
+const level = await loadLevel();
+const levelData = level.layers[0].data;
+
+const TILE_WIDTH = 32;
+const TILE_HEIGHT = 32;
+const TILES_ACROSS = 75;
+
+let row = -1;
+let column = -1;
+
+class Tile {
+    constructor(xPos, yPos) {
+        this.x = xPos;
+        this.y = yPos;
+        this.type = 1;
+    }
+}
+
+const wholeLevel = new Set();
+
+levelData.forEach(tile => {
+    column += 1;
+
+    if (tile > 0) {
+        wholeLevel.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT))
+    }
+
+    if (column === TILES_ACROSS) {
+        column = 0;
+        row += 1;
+    }
+});
+
+wholeLevel.forEach(t => {
+
+    add([
+        sprite("tile"),
+        pos(t.x, t.y)
+    ]);
+});
 
 // controls
 keyDown("left", () => {
