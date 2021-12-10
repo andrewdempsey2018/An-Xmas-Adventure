@@ -5,7 +5,27 @@ It is a retro platfomer game. The user plays as Santa and the goal is to catch a
 ## Features
 <hr>
 
+<br>
+
+## Existing Features
+<hr>
+
+#### Controls
+The user will move Santa using their arrows on their keyboard 
+#### Sfx
+Whenever Santa jumps a sound goes off
+
+<br>
+
+### Features Left to Implement
+
 ## Testing
 <hr>
 
-## 
+### Validator Testing
+
+## Media
+
+## Deployment
+
+## Credits
