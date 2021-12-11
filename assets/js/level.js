@@ -6,6 +6,11 @@ class Level {
 
     constructor(levelFile) {
 
+        const tile = loadSprite("tile", "./assets/tiles/ground-substrate.png");
+        const tile2 = loadSprite("tile2", "./assets/tiles/ice-platform-top.png");
+
+        const tileNames = ['blank', 'tile', 'tile2'];
+
         /* these values will never change */
         const TILE_WIDTH = 24;
         const TILE_HEIGHT = 24;
@@ -33,7 +38,7 @@ class Level {
             column += 1;
 
             if (tile > 0) {
-                this.solidLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT))
+                this.solidLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT, tile))
             }
 
             if (column === tilesAcross) {
@@ -45,7 +50,7 @@ class Level {
         /* generate a sprite for each tile in the solidLayer set */
         this.solidLayer.forEach(t => {
             add([
-                sprite("tile"),
+                sprite(tileNames[t.graphic]),
                 pos(t.x, t.y),
                 area(),
                 solid()

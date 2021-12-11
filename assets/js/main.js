@@ -9,7 +9,7 @@ import loadLevel from "./LoadLevel.js";
 loadSprite("santa", "./assets/sprites/santa.png");
 loadSprite("enemy", "./assets/sprites/enemy.png");
 
-const tile = loadSprite("tile", "./assets/tiles/ground-substrate.png");
+
 
 /* define movement speed and jump height for santa
 load the sprite and physics properties */
