@@ -52,8 +52,10 @@ keyDown("right", () => {
 
 //jump
 keyPress("space", () => {
-    santa.jump(JUMP_HEIGHT);
-    play("jump");
+    if (santa.isGrounded()) {
+        santa.jump(JUMP_HEIGHT);
+        play("jump");
+    }
 });
 
 /* TO DO collectables and enemies
