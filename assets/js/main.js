@@ -16,7 +16,7 @@ const WALK_SPEED = 200
 
 loadSound("jump", "./assets/sfx/jump.wav");
 
-let levelFile = await loadLevel('map06');
+let levelFile = await loadLevel('map07');
 let level = new Level(levelFile);
 
 /* These are the tiles in each level data structure that are not
