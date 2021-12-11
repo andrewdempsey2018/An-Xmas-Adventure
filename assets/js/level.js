@@ -25,6 +25,7 @@ class Level {
         the level data into a variable */
 
         const solidLayerData = levelFile.layers[0].data;
+        const emptyLayerData = levelFile.layers[1].data;
 
         /* read from the level data how many tiles the designer used 
         we need this value in order to ensure the level loads with the
@@ -37,6 +38,7 @@ class Level {
         let column = -1;
 
         this.solidLayer = new Set();
+        this.emptyLayer = new Set();
 
         /* cycle through the loaded level data and for each solidLayer tile,
         add it to the the solidLayer set for rendering */
@@ -54,7 +56,31 @@ class Level {
             }
         });
 
+        row = -1;
+        column = -1;
+
+        emptyLayerData.forEach(tile => {
+            column += 1;
+
+            if (tile > 0) {
+                /* tile - 1 offsets tile index to correct position */
+                this.emptyLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT, tile - 1))
+            }
+
+            if (column === tilesAcross) {
+                column = 0;
+                row += 1;
+            }
+        });
+
         /* generate a sprite for each tile in the solidLayer set */
+        this.emptyLayer.forEach(t => {
+            add([
+                sprite(tileNames[t.graphic]),
+                pos(t.x, t.y),
+            ]);
+        });
+
         this.solidLayer.forEach(t => {
             add([
                 sprite(tileNames[t.graphic]),
@@ -63,10 +89,17 @@ class Level {
                 solid()
             ]);
         });
+
+        
+
     }
 
     get getSolidLayer() {
         return this.solidLayer;
+    }
+
+    get getEmptyLayer() {
+        return this.emptyLayer;
     }
 }
 

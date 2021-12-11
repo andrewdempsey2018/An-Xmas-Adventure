@@ -9,12 +9,23 @@ import loadLevel from "./LoadLevel.js";
 loadSprite("santa", "./assets/sprites/santa.png");
 loadSprite("enemy", "./assets/sprites/enemy.png");
 
-
-
 /* define movement speed and jump height for santa
 load the sprite and physics properties */
 const JUMP_HEIGHT = 500
 const WALK_SPEED = 200
+
+loadSound("jump", "./assets/sfx/jump.wav");
+
+let levelFile = await loadLevel('map07');
+let level = new Level(levelFile);
+
+/* These are the tiles in each level data structure that are not
+equal to 0, ie. tiles that are visible */
+//let solidLayer = level.getSolidLayer;
+//let semiSolidLayer = level.getsemiSolidLayer;
+//let emptyLayer = level.getEmptyLayer;
+
+//add Sprites from here as we want them to walk in front of the backgroun, not be block out by it
 
 /* Create santa sprite and add it to the game instance
 body() means he will collide with the level and be affected by gravity
@@ -27,18 +38,10 @@ const santa = add([
     "santa"
 ]);
 
-loadSound("jump", "./assets/sfx/jump.wav");
-
-let levelFile = await loadLevel('level9');
-let level = new Level(levelFile);
-
-/* These are the tiles in each level data structure that are not
-equal to 0, ie. tiles that are visible */
-let solidLayer = level.getSolidLayer;
-
 // camera follows player
 santa.onUpdate(() => {
     camPos(santa.pos.x, 216)
+    //camPos(santa.pos)
 })
 
 // controls
@@ -52,8 +55,10 @@ keyDown("right", () => {
 
 //jump
 keyPress("space", () => {
-    santa.jump(JUMP_HEIGHT);
-    play("jump");
+    if (santa.isGrounded()) {
+        santa.jump(JUMP_HEIGHT);
+        play("jump");
+    }
 });
 
 /* TO DO collectables and enemies
