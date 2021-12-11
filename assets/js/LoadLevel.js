@@ -1,5 +1,5 @@
-const loadLevel = async () => {
-    const levelData = await fetch('./assets/levels/level1.json');
+const loadLevel = async (level) => {
+    const levelData = await fetch('./assets/levels/'+ level + '.json');
     return levelData.json();
 }
 
