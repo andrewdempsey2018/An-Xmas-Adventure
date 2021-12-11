@@ -1,0 +1,33 @@
+
+/* bg color from (https://hexcolor.co/gradient/B2FFFF) */
+body {
+    background: #B2FFFF;
+    background: linear-gradient(to bottom, #B2FFFF 0%, #A3F0F0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #B2FFFF), color-stop(100%, #A3F0F0));
+    background: -webkit-linear-gradient(top, #B2FFFF 0%, #A3F0F0 100%);
+    background: -moz-linear-gradient(top, #B2FFFF 0%, #A3F0F0 100%);
+    background: -o-linear-gradient(top, #B2FFFF 0%, #A3F0F0 100%);
+    background: -ms-linear-gradient(top, #B2FFFF 0%, #A3F0F0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B2FFFF', endColorstr='#A3F0F0', GradientType=0);
+    border: 1px solid #94E1E1;
+    box-shadow: inset 0 1px 0 #C1FFFF;
+    -webkit-box-shadow: inset 0 1px 0 #C1FFFF;
+    -moz-box-shadow: inset 0 1px 0 #C1FFFF;
+}
+
+h1 {
+    color: #C30F16;
+    text-shadow: seashell 0px 0px 2px;
+}
+
+ul {
+    text-align: center;
+}
+
+li {
+    font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+}
