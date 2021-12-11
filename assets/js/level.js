@@ -6,6 +6,11 @@ class Level {
 
     constructor(levelFile) {
 
+        const tile = loadSprite("tile", "./assets/tiles/ground-substrate.png");
+        const tile2 = loadSprite("tile2", "./assets/tiles/ice-platform-top.png");
+
+        const tileNames = ['blank', 'tile', 'tile2'];
+
         /* these values will never change */
         const TILE_WIDTH = 24;
         const TILE_HEIGHT = 24;
@@ -18,22 +23,22 @@ class Level {
         /* read from the level data how many tiles the designer used 
         we need this value in order to ensure the level loads with the
         correct number of rows and columns. */
-        const tilesAcross = levelFile.layers[0].width;
+        let tilesAcross = levelFile.layers[0].width;
 
         /* row and column are used during the level load procedure
         to determine the exact placement of each tile */
         let row = -1;
         let column = -1;
 
-        this.visibleTiles = new Set();
+        this.solidLayer = new Set();
 
-        /* cycle through the loaded level data and for each visible tile,
-        add it to the the visibleTiles set for rendering */
+        /* cycle through the loaded level data and for each solidLayer tile,
+        add it to the the solidLayer set for rendering */
         solidLayerData.forEach(tile => {
             column += 1;
 
             if (tile > 0) {
-                this.visibleTiles.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT))
+                this.solidLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT, tile))
             }
 
             if (column === tilesAcross) {
@@ -41,10 +46,20 @@ class Level {
                 row += 1;
             }
         });
+
+        /* generate a sprite for each tile in the solidLayer set */
+        this.solidLayer.forEach(t => {
+            add([
+                sprite(tileNames[t.graphic]),
+                pos(t.x, t.y),
+                area(),
+                solid()
+            ]);
+        });
     }
 
-    get getVisibleTiles() {
-        return this.visibleTiles;
+    get getSolidLayer() {
+        return this.solidLayer;
     }
 }
 
