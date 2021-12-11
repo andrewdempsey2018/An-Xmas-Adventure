@@ -6,16 +6,19 @@ class Level {
 
     constructor(levelFile) {
 
-        /* explicitly declare level constants
-        so we can use them for loading the level */
+        /* these values will never change */
         const TILE_WIDTH = 24;
         const TILE_HEIGHT = 24;
-        const TILES_ACROSS = 135;
 
         /* call loadlevel function and deposit
         the level data into a variable */
 
         const solidLayerData = levelFile.layers[0].data;
+
+        /* read from the level data how many tiles the designer used 
+        we need this value in order to ensure the level loads with the
+        correct number of rows and columns. */
+        const tilesAcross = levelFile.layers[0].width;
 
         /* row and column are used during the level load procedure
         to determine the exact placement of each tile */
@@ -33,7 +36,7 @@ class Level {
                 this.visibleTiles.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT))
             }
 
-            if (column === TILES_ACROSS) {
+            if (column === tilesAcross) {
                 column = 0;
                 row += 1;
             }
