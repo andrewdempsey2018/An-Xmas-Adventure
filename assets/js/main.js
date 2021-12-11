@@ -34,22 +34,12 @@ let level = new Level(levelFile);
 
 /* These are the tiles in each level data structure that are not
 equal to 0, ie. tiles that are visible */
-let solidLayer = level.getSolidLayerTiles;
+let solidLayer = level.getSolidLayer;
 
 // camera follows player
 santa.onUpdate(() => {
     camPos(santa.pos)
 })
-
-/* generate a sprite for each tile in the solidLayer set */
-solidLayer.forEach(t => {
-    add([
-        sprite("tile"),
-        pos(t.x, t.y),
-        area(),
-        solid()
-    ]);
-});
 
 // controls
 keyDown("left", () => {

@@ -25,7 +25,7 @@ class Level {
         let row = -1;
         let column = -1;
 
-        this.solidLayerTiles = new Set();
+        this.solidLayer = new Set();
 
         /* cycle through the loaded level data and for each solidLayer tile,
         add it to the the solidLayer set for rendering */
@@ -33,7 +33,7 @@ class Level {
             column += 1;
 
             if (tile > 0) {
-                this.solidLayerTiles.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT))
+                this.solidLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT))
             }
 
             if (column === tilesAcross) {
@@ -41,10 +41,20 @@ class Level {
                 row += 1;
             }
         });
+
+        /* generate a sprite for each tile in the solidLayer set */
+        this.solidLayer.forEach(t => {
+            add([
+                sprite("tile"),
+                pos(t.x, t.y),
+                area(),
+                solid()
+            ]);
+        });
     }
 
-    get getSolidLayerTiles() {
-        return this.solidLayerTiles;
+    get getSolidLayer() {
+        return this.solidLayer;
     }
 }
 
