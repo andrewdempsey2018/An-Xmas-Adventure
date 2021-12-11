@@ -14,6 +14,19 @@ load the sprite and physics properties */
 const JUMP_HEIGHT = 500
 const WALK_SPEED = 200
 
+loadSound("jump", "./assets/sfx/jump.wav");
+
+let levelFile = await loadLevel('map06');
+let level = new Level(levelFile);
+
+/* These are the tiles in each level data structure that are not
+equal to 0, ie. tiles that are visible */
+//let solidLayer = level.getSolidLayer;
+//let semiSolidLayer = level.getsemiSolidLayer;
+//let emptyLayer = level.getEmptyLayer;
+
+//add Sprites from here as we want them to walk in front of the backgroun, not be block out by it
+
 /* Create santa sprite and add it to the game instance
 body() means he will collide with the level and be affected by gravity
 area() gives the sprite collision detection */
@@ -25,20 +38,10 @@ const santa = add([
     "santa"
 ]);
 
-loadSound("jump", "./assets/sfx/jump.wav");
-
-let levelFile = await loadLevel('level11');
-let level = new Level(levelFile);
-
-/* These are the tiles in each level data structure that are not
-equal to 0, ie. tiles that are visible */
-//let solidLayer = level.getSolidLayer;
-//let semiSolidLayer = level.getsemiSolidLayer;
-//let emptyLayer = level.getEmptyLayer;
-
 // camera follows player
 santa.onUpdate(() => {
     camPos(santa.pos.x, 216)
+    //camPos(santa.pos)
 })
 
 // controls

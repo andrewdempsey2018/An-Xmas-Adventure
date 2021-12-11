@@ -73,7 +73,6 @@ class Level {
             }
         });
 
-
         /* generate a sprite for each tile in the solidLayer set */
         this.emptyLayer.forEach(t => {
             add([
@@ -81,7 +80,6 @@ class Level {
                 pos(t.x, t.y),
             ]);
         });
-
 
         this.solidLayer.forEach(t => {
             add([
@@ -91,6 +89,9 @@ class Level {
                 solid()
             ]);
         });
+
+        
+
     }
 
     get getSolidLayer() {
