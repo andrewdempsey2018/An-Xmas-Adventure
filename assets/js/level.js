@@ -6,10 +6,16 @@ class Level {
 
     constructor(levelFile) {
 
-        const tile = loadSprite("tile", "./assets/tiles/ground-substrate.png");
-        const tile2 = loadSprite("tile2", "./assets/tiles/ice-platform-top.png");
+        const tileNames = ['placeholder', 'grass-ground-snow', 'ground-ice-substrate', 'ground-ice-top', 'ground-substrate', 'ice-edge-left',
+            'ice-edge-right', 'ice-ground-substrate', 'ice-ground-top', 'ice-platform-left', 'ice-platform-right', 'ice-platform-top',
+            'ice-substrate', 'ice-top', 'snow-grass-edge-left', 'snow-grass-edge-right', 'snow-grass-top', 'snow-ground-grass',
+            'snow-ground-left', 'snow-ground-right', 'snow-ground-top'];
 
-        const tileNames = ['blank', 'tile', 'tile2'];
+        const tileSprites = new Set();
+
+        tileNames.forEach(name => {
+            tileSprites.add(loadSprite(name, "./assets/tiles/" + name + ".png"));
+        })
 
         /* these values will never change */
         const TILE_WIDTH = 24;
