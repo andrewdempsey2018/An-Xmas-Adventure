@@ -9,8 +9,6 @@ import loadLevel from "./LoadLevel.js";
 loadSprite("santa", "./assets/sprites/santa.png");
 loadSprite("enemy", "./assets/sprites/enemy.png");
 
-
-
 /* define movement speed and jump height for santa
 load the sprite and physics properties */
 const JUMP_HEIGHT = 500
@@ -29,12 +27,14 @@ const santa = add([
 
 loadSound("jump", "./assets/sfx/jump.wav");
 
-let levelFile = await loadLevel('level9');
+let levelFile = await loadLevel('level11');
 let level = new Level(levelFile);
 
 /* These are the tiles in each level data structure that are not
 equal to 0, ie. tiles that are visible */
-let solidLayer = level.getSolidLayer;
+//let solidLayer = level.getSolidLayer;
+//let semiSolidLayer = level.getsemiSolidLayer;
+//let emptyLayer = level.getEmptyLayer;
 
 // camera follows player
 santa.onUpdate(() => {
