@@ -1,0 +1,36 @@
+jump
+hit
+collect
+being hit
+attack
+game over
+win
+
+
+collect presents
+
+3 levels of jump   5 presents each
+
+snawman walk
+minnion walk
+possed present bounce
+
+hit with sack
+
+
+
+An Xmas Adventure!
+
+<screenshot here>
+
+Due to a series of unfortunate events, Santa's presents have become lost and scattered throught theland! It is your job to guide Santa and help him find all the lost presents. You'll need to help him quickly though, so there are no disapointed children this Christmas!
+
+If you would like to play the game, you can click the live link here:
+
+Game Rules and control scheme
+
+Walk: Arrow keys
+Attack: Left control
+Jump: Space bar
+
+During his adventure, Santa will need to defeat the evil snowmen, thier minnions as well as possessed presents! Use his sack to attck enemies. Santas abilites are upgraded every time he saves another present - see for yourself how magical he can become! Find Sants sled in order to move to the next level. Santa's special Elf (aka Anthony) has hidden

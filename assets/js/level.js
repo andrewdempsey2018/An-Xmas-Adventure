@@ -6,10 +6,10 @@ class Level {
 
     constructor(levelFile) {
 
-        const tileNames = ['placeholder', 'grass-ground-snow', 'ground-ice-substrate', 'ground-ice-top', 'ground-substrate', 'ice-edge-left',
-            'ice-edge-right', 'ice-ground-substrate', 'ice-ground-top', 'ice-platform-left', 'ice-platform-right', 'ice-platform-top',
-            'ice-substrate', 'ice-top', 'snow-grass-edge-left', 'snow-grass-edge-right', 'snow-grass-top', 'snow-ground-grass',
-            'snow-ground-left', 'snow-ground-right', 'snow-ground-top'];
+        const tileNames = ['tile001', 'tile002', 'tile003', 'tile004', 'tile005',
+            'tile006', 'tile007', 'tile008', 'tile009', 'tile010', 'tile011',
+            'tile012', 'tile013', 'tile014', 'tile015', 'tile016', 'tile017',
+            'tile018', 'tile019', 'tile020'];
 
         const tileSprites = new Set();
 
@@ -44,7 +44,8 @@ class Level {
             column += 1;
 
             if (tile > 0) {
-                this.solidLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT, tile))
+                /* tile - 1 fixes issue where tiles become jumbled */
+                this.solidLayer.add(new Tile(column * TILE_WIDTH, row * TILE_HEIGHT, tile - 1))
             }
 
             if (column === tilesAcross) {
