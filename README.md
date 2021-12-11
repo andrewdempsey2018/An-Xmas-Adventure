@@ -14,7 +14,7 @@ The top image shows both the foreground and background layers as they appear in 
 # Features
 <hr>
 
-<br>
+
 ## Existing Features
 <hr>
 
