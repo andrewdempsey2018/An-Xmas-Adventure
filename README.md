@@ -2,9 +2,12 @@
 
 It is a retro platfomer game. The user plays as Santa and the goal is to catch as many presents as you can. The more presents you cath the higher Santa will be able to jump, so he will be able to catch even more presents.
 
-## Planning
+## Planning & Development
 Our team drew sketches of levels beforehand in order to have a visual on how each level will look like, to make the development process easier.
 ![sketch plan](/An-Xmas-Adventure\assets\readme-template-master\media\xmas-adventure-sketches.jpg)
+
+The top image shows both the foreground and background layers as they appear in game. The middle picture shows only the background layer and the bottom image shows both layers but the developer has used the transparency tool in Tiled. The transparency tool is a great resource when working with multi layered tile maps. It allowed us to focus on each particular layer with no visual interference from unrelated assets.
+![layers](/An-Xmas-Adventure\assets\readme-template-master\media\layers.png)
 
 <br>
 
