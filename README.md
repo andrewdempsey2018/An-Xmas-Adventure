@@ -2,17 +2,16 @@
 
 It is a retro platfomer game. The user plays as Santa and the goal is to catch as many presents as you can. The more presents you cath the higher Santa will be able to jump, so he will be able to catch even more presents.
 
-# Features
-<hr>
-
-<br>
-
 ## Planning
 Our team drew sketches of levels beforehand in order to have a visual on how each level will look like, to make the development process easier.
 ![sketch plan](An-Xmas-Adventure\assets\readme-template-master\media\xmas-adventure-sketches.jpg)
 
 <br>
 
+# Features
+<hr>
+
+<br>
 ## Existing Features
 <hr>
 
@@ -29,6 +28,20 @@ Whenever Santa jumps a sound goes off
 
 ## Testing
 <hr>
+
+<br>
+
+### Bugs & Fixes
+- We had an issue where Santa was able to jump multiple times in mid air. Kaboom provides a flag for easily checking weather a character is on the floor. We just needed to apply this flag to asimple if statement in our jumping code:
+//jump
+keyPress("space", () => {
+    if (santa.isGrounded()) {
+        santa.jump(JUMP_HEIGHT);
+        play("jump");
+    }
+});
+
+<br>
 
 ### Validator Testing
 
