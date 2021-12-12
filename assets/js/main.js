@@ -8,6 +8,9 @@ import loadLevel from "./LoadLevel.js";
 /* load graphics and other assets */
 loadSprite("enemy", "./assets/sprites/enemy.png");
 
+/* backgrounds for levels */
+loadSprite("countryside_night", "./assets/backgrounds/countryside_night.png");
+
 /* get the santa frames file and slice it in 7 pieces
 the frames file is 336 pixels wide so this amounts to 7 frames
 each 48 pixels wide. Give each indiviual animation sesquence a name
@@ -59,6 +62,14 @@ equal to 0, ie. tiles that are visible */
 //let solidLayer = level.getSolidLayer;
 //let semiSolidLayer = level.getsemiSolidLayer;
 //let emptyLayer = level.getEmptyLayer;
+
+/* add backgrounds first to scene so that all other assets asre drown on top of bg */
+const background1 = add([
+    sprite("countryside_night"),
+    pos(0, 0),
+    fixed(),
+    z(-2)
+]);
 
 //add Sprites from here as we want them to walk in front of the backgroun, not be block out by it
 
