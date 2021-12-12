@@ -22,10 +22,11 @@ class Level {
         const TILE_HEIGHT = 24;
 
         /* call loadlevel function and deposit
-        the level data into a variable */
+        the level data into relevent variables */
 
         const solidLayerData = levelFile.layers[0].data;
         const emptyLayerData = levelFile.layers[1].data;
+        const objectLayerData = levelFile.layers[2].objects;
 
         /* read from the level data how many tiles the designer used 
         we need this value in order to ensure the level loads with the
@@ -91,10 +92,26 @@ class Level {
         });
 
         /* populate level with entities */
-        let presents = new Set();
-        for (let i = 0; i < 4; i++) {
-            presents.add(new present(rand(0, 700), rand(0, 500), rand(10, 530)));
-        };
+
+        const objects = new Set();
+
+        objectLayerData.forEach(entity => {
+            if(entity.type === 'blue_present') {
+                objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            if(entity.type === 'green_present') {
+                objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            if(entity.type === 'orange_present') {
+                objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            if(entity.type === 'purple_present') {
+                objects.add(new present(entity.x, entity.y, entity.type))
+            }
+        })
 
     }
 
@@ -104,6 +121,10 @@ class Level {
 
     get getEmptyLayer() {
         return this.emptyLayer;
+    }
+
+    get getEntities() {
+        return this.entities;
     }
 }
 
