@@ -2,8 +2,9 @@
 import k from "./kaboom.js"
 import Level from "./level.js";
 import present from "./present.js";
-import Tile from "./tile.js";;
+import Tile from "./tile.js";
 import loadLevel from "./LoadLevel.js";
+import snowmanBig from "./snowmanBig.js";
 
 /* load graphics and other assets */
 loadSprite("enemy", "./assets/sprites/enemy.png");

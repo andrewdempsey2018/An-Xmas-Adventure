@@ -1,6 +1,7 @@
 import k from "./kaboom.js"
 import present from "./present.js";
 import Tile from "./tile.js";
+import snowmanBig from "./snowmanBig.js";
 
 class Level {
 
@@ -96,6 +97,8 @@ class Level {
         const objects = new Set();
 
         objectLayerData.forEach(entity => {
+
+            /* collectables */
             if(entity.type === 'blue_present') {
                 objects.add(new present(entity.x, entity.y, entity.type))
             }
@@ -110,6 +113,11 @@ class Level {
 
             if(entity.type === 'purple_present') {
                 objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            /* big snowman enemy */
+            if(entity.type === 'snowmanBig') {
+                objects.add(new snowmanBig(entity.x, entity.y))
             }
         })
 
