@@ -29,7 +29,7 @@ h1 {
 
 }
 
-li {
+li, .thumbnails .row .col {
     text-align: center;
 }
 
@@ -79,13 +79,14 @@ a {
     text-shadow: 1px 0 black, -1px 0 black, 0 -1px black, 0 1px black;
 }
 
-img {
+img:not(.thumbnails img) {
     position: absolute;
     bottom: 20vh;
 }
 
 #sprite-animation {
     left: 32vw;
+    z-index: 999;
 }
 
 #sleigh{
