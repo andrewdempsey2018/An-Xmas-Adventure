@@ -48,7 +48,7 @@ The user will move Santa using their arrows on their keyboard
 Whenever Santa jumps a sound goes off
 
 #### Soundtrack
-
+The game has fun upbeat retro 
 <br>
 
 ### Features Left to Implement
@@ -85,8 +85,7 @@ Whenever Santa jumps a sound goes off
 <br>
 
 ## Credits
-
-<br>
+<hr>
 
 ### Langauges used
 - Javascript
@@ -94,31 +93,42 @@ Whenever Santa jumps a sound goes off
 - CSS
 
 ### Techonologies used
-
 <hr>
 
-##### BFXR
+#### BFXR
 
 We used BFXR to generate the games sounds effects. BFXR is a free tool by Stephen Lavelle that generates retro style sound effects and allows them to be exported to various file formats. The UI consists of mixers, dials and buttons that allow easy customisation of waveforms, pitch, reverb and arpeggiation amongst other effects. The tool is used widely in the retro game development community and the assets created from it are licence free. BFXR is packaged as a downloadable executable.
 The software can be downloaded at https://www.bfxr.net/
 
 ![bfx](./assets/readme/bfx.png)
 
-##### Tiled
+#### Tiled
 
 We used Tiled by Thorbjørn Lindeijer to create our level maps. Tiled is a 2D level editor that helps create tile maps of various forms. It supports straight rectangular tile layers, but also projected isometric, staggered isometric and staggered hexagonal layers. A tile set can be either a single image containing many tiles, or it can be a collection of individual images. In order to support certain depth faking techniques, tiles and layers can be offset by a custom distance and their rendering order can be configured. Tiled also allows layering of tile maps meaning we were able to create a collision layer for Santa to interact with as well as a decoration layer to enhance the background graphics detail.
 Tiled is free and available at https://www.mapeditor.org/
 
 ![tiled](./assets/readme/tiled-img.png)
 
-##### MIDI
+#### MIDI
 
 We originally wanted to use a MIDI keyboard to create some Christmas themed music. Our intention was to use an 8 bit VST instrument to produce the classic sound. With the time constraints of the Hackathon, we had to scale back on our plan in this department. Instead, we downloaded free to use Christmas MIDI files from here: https://www.westnet.com/Holiday/midi/
 
-##### GSXCC
+#### GSXCC
 
 We then used a free program called GSXCC by Toda Naoki aka 'GASHISOFT'. This program emulates the sound chips of classic game consoles. It also plays MIDI files and can process MIDI through any of the emulated sound chips. We used the Nintendo NES pre-set and filtered our favourite tunes through it. We feel the music really adds to the overall retro and Christmas feel.
 You can download GSXCC emulator here:
 https://meme.institute/gxscc/
 
 ![GSXCC](./assets/readme/gxscc.png)
+
+### Workspace
+<hr>
+
+#### Gitpod & Visual Studio Code
+Both Gitpod and Visual Studio Code were used to develop code.
+
+<br>
+
+#### Version Control
+##### Git
+ For version control we utilized the terminal to add and/or commit to Git and push to GitHub
