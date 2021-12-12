@@ -84,6 +84,19 @@ img:not(.thumbnails img) {
     bottom: 20vh;
 }
 
+.thumbnails img {
+    background-color: brown;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.thumbnails p {
+    color: #4686c8;
+    font-family: 'Ephesis', cursive;
+    font-size: 35px;
+}
+
 #sprite-animation {
     left: 32vw;
     z-index: 999;
