@@ -26,6 +26,14 @@ The top image shows both the foreground and background layers as they appear in 
 ### Initial Discussion
 - The user should feel some nostologia due to the retro look and sound of the game.
 - The goal the game is straightfoward and simple.
+- The controls to be very simple
+
+### First time visitor goal
+Our goal for a first time user is to:
+- Be able to play immidietly
+- Pick up on the controls immidietly
+- Feel like their play an NES game
+
 ## Features
 
 <hr>
@@ -79,6 +87,11 @@ Whenever Santa jumps a sound goes off
 ## Credits
 
 <br>
+
+### Langauges used
+- Javascript
+- HTML
+- CSS
 
 ### Techonologies used
 
