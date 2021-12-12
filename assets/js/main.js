@@ -14,7 +14,17 @@ load the sprite and physics properties */
 const JUMP_HEIGHT = 500
 const WALK_SPEED = 200
 
+/* sound effects */
 loadSound("jump", "./assets/sfx/jump.wav");
+loadSound("pickup", "./assets/sfx/pickup.wav");
+
+/* music */
+loadSound("music", "./assets/music/jingle.mp3");
+
+/* the levels music file */
+const music = play("music", {
+    loop: true
+})
 
 let levelFile = await loadLevel('map07');
 let level = new Level(levelFile);
@@ -60,6 +70,12 @@ keyPress("space", () => {
         play("jump");
     }
 });
+
+/* Santa touches a present, make it disapear, add to score */
+onCollide("santa", "present", (santa, present) => {
+    destroy(present);
+    play("pickup");
+})
 
 /* TO DO collectables and enemies
 const ENEMY_SPEED = 50;
