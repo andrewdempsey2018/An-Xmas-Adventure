@@ -74,3 +74,12 @@ We used Tiled by Thorbjørn Lindeijer to create our level maps. Tiled is a 2D le
 Tiled is free and available at https://www.mapeditor.org/
 
 ![tiled](/An-Xmas-Adventure\assets\readme-template-master\media\tiled-img.png)
+
+##### MIDI
+We originally wanted to use a MIDI keyboard to create some Christmas themed music. Our intention was to use an 8 bit VST instrument to produce the classic sound. With the time constraints of the Hackathon, we had to scale back on our plan in this department. Instead, we downloaded free to use Christmas MIDI files from here: https://www.westnet.com/Holiday/midi/
+##### GSXCC
+We then used a free program called GSXCC by Toda Naoki aka 'GASHISOFT'. This program emulates the sound chips of classic game consoles. It also plays MIDI files and can process MIDI through any of the emulated sound chips. We used the Nintendo NES pre-set and filtered our favourite tunes through it. We feel the music really adds to the overall retro and Christmas feel.
+You can download GSXCC emulator here:
+https://meme.institute/gxscc/
+
+![GSXCC](/An-Xmas-Adventure\assets\readme-template-master\media\gxscc.png)
