@@ -72,11 +72,28 @@ a {
     font-family: 'Ephesis', cursive;
     font-size: 45px;
     color: #4686c8 !important;
+    transition: all 1ms;
+}
+
+.options:hover {
+    text-shadow: 1px 0 black, -1px 0 black, 0 -1px black, 0 1px black;
 }
 
 img {
     position: absolute;
     bottom: 20vh;
+}
+
+#sprite-animation {
+    left: 32vw;
+}
+
+#sleigh{
+    left: 20vw;
+}
+
+#tree {
+    left: 75vw;
 }
 
 footer {
