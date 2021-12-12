@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     let width = $(window).width();
-    console.log(width)
     var images = ['santa-run-left.png', 'santa-run-right.png'],
         index = 0, // starting index
         maxImages = images.length - 1;
@@ -12,8 +11,7 @@ $(document).ready(function () {
             $('#sprite-animation').attr("src", 'assets/sprites/santa/' + currentImage);
             $('#sprite-animation').show(0);
             $("#sprite-animation").animate({left: "+=10"}, 0);
-            console.log($('#sprite-animation').css("left").replace("px", ""), width)
-            if($('#sprite-animation').css("left").replace("px", "")> (width-300) ){
+            if($('#sprite-animation').css("left").replace("px", "")> (width*0.70) ){
                 $('#sprite-animation').attr("src", 'assets/sprites/santa/santa-stand.png');
                 clearInterval(timer);
         }});

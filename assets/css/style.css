@@ -79,6 +79,18 @@ img {
     bottom: 20vh;
 }
 
+#sprite-animation {
+    left: 32vw;
+}
+
+#sleigh{
+    left: 20vw;
+}
+
+#tree {
+    left: 75vw;
+}
+
 footer {
     height: 20vh;
     background-image: url("../ui/f-ground.png");
