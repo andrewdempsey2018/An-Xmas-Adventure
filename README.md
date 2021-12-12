@@ -20,28 +20,34 @@ The top image shows both the foreground and background layers as they appear in 
 
 <br>
 
-## Planning
+## User Experience (UX)
+<hr>
 
-Our team drew sketches of levels beforehand in order to have a visual on how each level will look like, to make the development process easier.
-![sketch plan](./assets/readme/xmas-adventure-sketches.jpg)
+### Initial Discussion
+- The user should feel some nostologia due to the retro look and sound of the game.
+- The goal the game is straightfoward and simple.
+- The controls to be very simple
 
-<br>
+### First time visitor goal
+Our goal for a first time user is to:
+- Be able to play immidietly
+- Pick up on the controls immidietly
+- Feel like their play an NES game
 
-# Features
+## Features
 
 <hr>
 
 ## Existing Features
-
-<hr>
-
-### Controls
+#### Controls
 
 The user will move Santa using their arrows on their keyboard
 
-### Sfx
+#### Sfx
 
 Whenever Santa jumps a sound goes off
+
+#### Soundtrack
 
 <br>
 
@@ -81,6 +87,11 @@ Whenever Santa jumps a sound goes off
 ## Credits
 
 <br>
+
+### Langauges used
+- Javascript
+- HTML
+- CSS
 
 ### Techonologies used
 
