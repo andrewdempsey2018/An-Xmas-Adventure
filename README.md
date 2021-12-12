@@ -47,6 +47,8 @@ Whenever Santa jumps a sound goes off
 
 ### Features Left to Implement
 
+- The app was not able to be made responsive for use on mobile devices within the alloted project time. This will be a number one priority to implement in the future.
+
 <br>
 
 ## Testing
@@ -80,6 +82,8 @@ Whenever Santa jumps a sound goes off
 
 ## Credits
 
+The moon image graphic used in the background was sampled from the following image:
+https://photos.com/featured/1-winter-moon-yourapechkin.html
 <br>
 
 ### Techonologies used
