@@ -30,6 +30,7 @@ class snowmanBig {
         this.xSpeed = 50;
 
         this.walkDistance = 0;
+        this.flipValue = false;
 
         this.spr = k.add([
             k.sprite("snowmanBig"),
@@ -40,7 +41,7 @@ class snowmanBig {
             "snowmanBig"
         ]);
 
-        
+       
     }
 
     move() {
@@ -51,7 +52,11 @@ class snowmanBig {
         if (this.walkDistance >= 250) {
             this.walkDistance = 0;
             this.xSpeed *= -1;
+            this.flipValue = !this.flipValue;
+            this.spr.flipX(this.flipValue);
         }
+
+        
 
     };
 

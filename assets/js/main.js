@@ -150,6 +150,11 @@ action(() => {
     })
 })
 
+const snowMen = get("snowmanBig");
+snowMen.forEach(snowMan => {
+    snowMan.play('walk');
+})
+
 /* TO DO collectables and enemies
 const ENEMY_SPEED = 50;
 let enemySpeedX = 10;
@@ -182,6 +187,8 @@ action(() => {
 
 });
 */
+
+
 
 
 
