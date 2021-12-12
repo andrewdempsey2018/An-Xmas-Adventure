@@ -1,7 +1,4 @@
-
-/* html {
-    height: 100%;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
 
 main {
     height: 80vh;
@@ -15,22 +12,66 @@ audio {
     height: 30px;
 }
 
+.right-align {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 h1 {
     color: #C30F16;
     text-shadow: seashell 0px 0px 2px;
-}
-
-ul {
+    margin-top: 30%;
     text-align: center;
+    font-family: 'Ephesis', cursive;
+    font-size: 55px;
+    font-weight:bold;
+
 }
 
 li {
-    font-size: x-large;
+    text-align: center;
 }
+
+/* credit: https://stackoverflow.com/questions/1367409/how-to-make-button-look-like-a-link */
+li button {
+    align-items: normal;
+    background-color: rgba(0,0,0,0);
+    border-style: none;
+    box-sizing: content-box;
+    cursor: pointer;
+    display: inline;
+    font: inherit;
+    height: auto;
+    padding: 0;
+    perspective-origin: 0 0;
+    text-align: start;
+    transform-origin: 0 0;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
+    -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+}
+
+@supports (-moz-appearance:none) { /* Mozilla-only */
+    li button::-moz-focus-inner { /* reset any predefined properties */ 
+      border: none;
+      padding: 0;
+    }
+    li button:focus { /* add outline to focus pseudo-class */
+      outline-style: dotted;
+      outline-width: 1px;
+    }
+  }
 
 a {
     text-decoration: none;
+}
+
+.options{
+    font-family: 'Ephesis', cursive;
+    font-size: 45px;
+    color: #4686c8 !important;
 }
 
 img {
