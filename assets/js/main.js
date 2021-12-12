@@ -1,7 +1,7 @@
 /* import external classes and instances */
 import k from "./kaboom.js"
 import Level from "./level.js";
-import pickup from "./pickup.js";
+import present from "./present.js";
 import Tile from "./tile.js";;
 import loadLevel from "./LoadLevel.js";
 
@@ -71,12 +71,6 @@ const enemy = add([
     pos(700, 550),
     "enemy"
 ]);
-
-let colls = new Set();
-for (let i = 0; i < 4; i++) {
-    //colls.add(new pickup(rand(0, 700), rand(0, 500), rand(10, 530)));
-};
-
 
 action(() => {
     enemy.move(enemySpeedX, -ENEMY_SPEED);

@@ -1,5 +1,5 @@
 import k from "./kaboom.js"
-
+import present from "./present.js";
 import Tile from "./tile.js";
 
 class Level {
@@ -90,7 +90,11 @@ class Level {
             ]);
         });
 
-        
+        /* populate level with entities */
+        let presents = new Set();
+        for (let i = 0; i < 4; i++) {
+            presents.add(new present(rand(0, 700), rand(0, 500), rand(10, 530)));
+        };
 
     }
 

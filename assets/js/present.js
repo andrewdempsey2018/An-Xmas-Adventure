@@ -1,8 +1,8 @@
 import k from "./kaboom.js"
 
-loadSprite("pickup", "./assets/sprites/present.png");
+loadSprite("present", "./assets/sprites/presents_collect/blue_present.png");
 
-class pickup {
+class present {
 
     constructor(xPos, yPos, speed) {
         this.xPos = xPos;
@@ -10,10 +10,10 @@ class pickup {
         this.speed = speed;
 
         this.spr = k.add([
-            k.sprite("pickup"),
+            k.sprite("present"),
             k.area(),
             k.pos(this.xPos, this.yPos),
-            "pickup"
+            "present"
         ]);
     }
 
@@ -27,4 +27,4 @@ class pickup {
     };
 }
 
-export default pickup;
+export default present;
