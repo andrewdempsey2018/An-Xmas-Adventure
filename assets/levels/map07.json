@@ -324,8 +324,44 @@
                  "type":"snowmanBig",
                  "visible":true,
                  "width":33,
-                 "x":333.333333333333,
-                 "y":390.666666666667
+                 "x":293.333333333333,
+                 "y":300
+                }, 
+                {
+                 "gid":25,
+                 "height":48,
+                 "id":74,
+                 "name":"",
+                 "rotation":0,
+                 "type":"snowmanBig",
+                 "visible":true,
+                 "width":33,
+                 "x":433.333333333333,
+                 "y":152
+                }, 
+                {
+                 "gid":25,
+                 "height":48,
+                 "id":75,
+                 "name":"",
+                 "rotation":0,
+                 "type":"snowmanBig",
+                 "visible":true,
+                 "width":33,
+                 "x":320,
+                 "y":793.333333333333
+                }, 
+                {
+                 "gid":29,
+                 "height":24,
+                 "id":81,
+                 "name":"",
+                 "rotation":0,
+                 "type":"effectMoveEnemy",
+                 "visible":true,
+                 "width":24,
+                 "x":624,
+                 "y":384
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -334,7 +370,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":74,
+ "nextobjectid":82,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"2021.03.23",

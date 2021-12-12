@@ -21,7 +21,7 @@ audio {
 h1 {
     color: #C30F16;
     text-shadow: seashell 0px 0px 2px;
-    margin-top: 30%;
+    margin-top: 25%;
     text-align: center;
     font-family: 'Ephesis', cursive;
     font-size: 55px;
@@ -29,7 +29,7 @@ h1 {
 
 }
 
-li {
+li, .thumbnails .row .col {
     text-align: center;
 }
 
@@ -79,13 +79,26 @@ a {
     text-shadow: 1px 0 black, -1px 0 black, 0 -1px black, 0 1px black;
 }
 
-img {
+img:not(.thumbnails img) {
     position: absolute;
     bottom: 20vh;
 }
 
+.thumbnails img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.thumbnails p {
+    color: #C30F16;
+    font-family: 'Ephesis', cursive;
+    font-size: 35px;
+}
+
 #sprite-animation {
     left: 32vw;
+    z-index: 999;
 }
 
 #sleigh{

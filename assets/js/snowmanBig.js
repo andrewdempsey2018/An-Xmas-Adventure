@@ -1,7 +1,25 @@
 import k from "./kaboom.js"
 
 /* load image and extract frames */
-loadSprite("snowmanBig", "./assets/sprites/snowmen/evil-snowman-frame1.png")
+loadSprite("snowmanBig", "./assets/sprites/snowmen/evilSnowmanFrames.png", {
+    sliceX: 4,
+    // Define animations
+    anims: {
+        "idle": 0,
+        "walk": {
+            // Starts from frame 0, ends at frame 2
+            from: 0,
+            to: 1,
+            to: 2,
+            to: 1,
+            speed: 3,
+            loop: true,
+        },
+        "hit": 3
+    }
+})
+
+
 
 class snowmanBig {
 
@@ -9,6 +27,9 @@ class snowmanBig {
         this.xPos = xPos;
         this.yPos = yPos;
         this.health = 2;
+        this.xSpeed = 50;
+
+        this.walkDistance = 0;
 
         this.spr = k.add([
             k.sprite("snowmanBig"),
@@ -18,16 +39,22 @@ class snowmanBig {
             k.body(),
             "snowmanBig"
         ]);
+
+        
     }
 
     move() {
-        /*this.spr.move(this.speed, this.speed);
+        this.spr.move(this.xSpeed, 0);
 
-        if (this.spr.screenPos().y >= 600 || this.spr.screenPos().x >= 800) {
-            this.spr.moveTo(rand(40, 700), -40);
-            this.speed = rand(10, 530);
-        }*/
+        this.walkDistance += 1;
+
+        if (this.walkDistance >= 250) {
+            this.walkDistance = 0;
+            this.xSpeed *= -1;
+        }
+
     };
+
 }
 
 export default snowmanBig;
