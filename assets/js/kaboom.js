@@ -5,7 +5,8 @@ import kaboom from "https://unpkg.com/kaboom@next/dist/kaboom.mjs";
 export const k = kaboom({
     width: 640,
     height: 480,
-    background: [0, 51, 102]
+    background: [0, 51, 102],
+    canvas: document.querySelector("game_canvas")
 });
 
 export default k;
