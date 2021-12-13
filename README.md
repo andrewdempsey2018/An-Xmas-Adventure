@@ -75,7 +75,7 @@ The game has fun upbeat retro
 
 - We had an issue where Santa was able to jump multiple times in mid air. Kaboom provides a flag for easily checking weather a character is on the floor. We just needed to apply this flag to asimple if statement in our jumping code:
 <br>
-~~~
+```
   //jump
     keyPress("space", () => {
       if (santa.isGrounded()) {
@@ -83,7 +83,7 @@ The game has fun upbeat retro
         play("jump");
     }
   });
-~~~
+```
 <br>
 
 ### Validator Testing
