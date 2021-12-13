@@ -56,7 +56,7 @@ const music = play("music", {
     loop: true
 })
 
-let levelFile = await loadLevel('demolevel');
+let levelFile = await loadLevel('level1');
 let level = new Level(levelFile);
 
 /* These are the tiles in each level data structure that are not
