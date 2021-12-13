@@ -108,6 +108,8 @@ santa.onUpdate(() => {
     //camPos(santa.pos)
 })
 
+let attack = false;
+
 // controls
 keyDown("left", () => {
     santa.flipX(true); //make santa sprite face left
@@ -150,9 +152,29 @@ action(() => {
     })
 })
 
+/* animate snowmen */
 const snowMen = get("snowmanBig");
 snowMen.forEach(snowMan => {
     snowMan.play('walk');
+})
+
+/* Santa can destroy snowmen by jumping on their heads */
+onCollide("santa", "snowmanBig", (stnick, snowman) => {
+    if (attack) {
+        destroy(snowman);
+
+    }
+    //play("pickup");
+})
+
+keyPress("z", () => {
+    santa.play("attack");
+    attack = true;
+});
+
+onKeyRelease("z", () => {
+    santa.play("idle")
+    attack = false;
 })
 
 /* TO DO collectables and enemies
