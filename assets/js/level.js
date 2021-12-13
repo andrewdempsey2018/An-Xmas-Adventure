@@ -1,6 +1,8 @@
 import k from "./kaboom.js"
-
+import present from "./present.js";
 import Tile from "./tile.js";
+import snowmanBig from "./snowmanBig.js";
+import effectMoveEnemy from "./effectMoveEnemy.js";
 
 class Level {
 
@@ -9,7 +11,7 @@ class Level {
         const tileNames = ['tile001', 'tile002', 'tile003', 'tile004', 'tile005',
             'tile006', 'tile007', 'tile008', 'tile009', 'tile010', 'tile011',
             'tile012', 'tile013', 'tile014', 'tile015', 'tile016', 'tile017',
-            'tile018', 'tile019', 'tile020'];
+            'tile018', 'tile019', 'tile020', 'tile021'];
 
         const tileSprites = new Set();
 
@@ -22,10 +24,11 @@ class Level {
         const TILE_HEIGHT = 24;
 
         /* call loadlevel function and deposit
-        the level data into a variable */
+        the level data into relevent variables */
 
         const solidLayerData = levelFile.layers[0].data;
         const emptyLayerData = levelFile.layers[1].data;
+        const objectLayerData = levelFile.layers[2].objects;
 
         /* read from the level data how many tiles the designer used 
         we need this value in order to ensure the level loads with the
@@ -86,11 +89,44 @@ class Level {
                 sprite(tileNames[t.graphic]),
                 pos(t.x, t.y),
                 area(),
-                solid()
+                solid(),
+                'solidTile'
             ]);
         });
 
-        
+        /* populate level with entities */
+
+        this.objects = new Set();
+
+        objectLayerData.forEach(entity => {
+
+            /* collectables */
+            if(entity.type === 'blue_present') {
+                this.objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            if(entity.type === 'green_present') {
+                this.objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            if(entity.type === 'orange_present') {
+                this.objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            if(entity.type === 'purple_present') {
+                this.objects.add(new present(entity.x, entity.y, entity.type))
+            }
+
+            /* big snowman enemy */
+            if(entity.type === 'snowmanBig') {
+                this.objects.add(new snowmanBig(entity.x, entity.y))
+            }
+
+            /* invisible colliders for enemies to move back and forth */
+            if(entity.type === 'effectMoveEnemy') {
+                this.objects.add(new effectMoveEnemy(entity.x, entity.y))
+            }
+        })
 
     }
 
@@ -100,6 +136,10 @@ class Level {
 
     get getEmptyLayer() {
         return this.emptyLayer;
+    }
+
+    get getObjects() {
+        return this.objects;
     }
 }
 
