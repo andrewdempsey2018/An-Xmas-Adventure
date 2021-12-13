@@ -158,11 +158,19 @@ snowMen.forEach(snowMan => {
     snowMan.play('walk');
 })
 
+onCollide("santa", "snowmanBig", () => {
+    if (!attack) {
+        santa.pos.x = 400;
+        santa.pos.y = 300;
+    }
+})
+
 /* Santa can destroy snowmen by jumping on their heads */
 onCollide("santa", "snowmanBig", (stnick, snowman) => {
     if (attack) {
+        addKaboom(snowman.pos)
         destroy(snowman);
-
+    
     }
     //play("pickup");
 })
