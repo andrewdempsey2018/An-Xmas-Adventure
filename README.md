@@ -18,6 +18,7 @@ Our team drew sketches of levels beforehand in order to have a visual on how eac
 The top image shows both the foreground and background layers as they appear in game. The middle picture shows only the background layer and the bottom image shows both layers but the developer has used the transparency tool in Tiled. The transparency tool is a great resource when working with multi layered tile maps. It allowed us to focus on each particular layer with no visual interference from unrelated assets.
 </br>
 </br>
+
 ![layers](./assets/readme/layers.png)
 
 <br>
@@ -83,17 +84,13 @@ The game has fun upbeat retro
         play("jump");
     }
   });
-<<<<<<< HEAD
-- We had an issue with some images not appearing on the README in Github.
-
-![]()
-
-=======
 ```
->>>>>>> 9b928fb862419926d7fe9944cf0308bc8f1435aa
 <br>
 
 ### Validator Testing
+The game has been tested on Chrome and Opera GX web browsers:
+- Responsive on both browsers (No delay)
+- Audio and sound effects work on both browsers
 
 <br>
 
@@ -146,6 +143,8 @@ You can download GSXCC emulator here:
 https://meme.institute/gxscc/
 
 ![GSXCC](./assets/readme/gxscc.png)
+
+#### ColorDesigner.io
 
 Used 'colourDesigner' Gradient generator to help with the background sky colours: https://colordesigner.io/gradient-generator
 
