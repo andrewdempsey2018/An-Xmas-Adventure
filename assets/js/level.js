@@ -2,6 +2,7 @@ import k from "./kaboom.js"
 import present from "./present.js";
 import Tile from "./tile.js";
 import snowmanBig from "./snowmanBig.js";
+import snowmanMinnion from "./snowmanMinnion.js";
 import effectMoveEnemy from "./effectMoveEnemy.js";
 
 class Level {
@@ -120,6 +121,11 @@ class Level {
             /* big snowman enemy */
             if(entity.type === 'snowmanBig') {
                 this.objects.add(new snowmanBig(entity.x, entity.y))
+            }
+
+            /* small snowman enemy */
+            if(entity.type === 'snowmanMinnion') {
+                this.objects.add(new snowmanMinnion(entity.x, entity.y))
             }
 
             /* invisible colliders for enemies to move back and forth */
