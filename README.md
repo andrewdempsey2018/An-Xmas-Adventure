@@ -16,6 +16,8 @@ Our team drew sketches of levels beforehand in order to have a visual on how eac
 ![sketch plan](./assets/readme/xmas-adventure-sketches.jpg)
 
 The top image shows both the foreground and background layers as they appear in game. The middle picture shows only the background layer and the bottom image shows both layers but the developer has used the transparency tool in Tiled. The transparency tool is a great resource when working with multi layered tile maps. It allowed us to focus on each particular layer with no visual interference from unrelated assets.
+</br>
+</br>
 ![layers](./assets/readme/layers.png)
 
 <br>
@@ -72,6 +74,8 @@ The game has fun upbeat retro
 ### Bugs & Fixes
 
 - We had an issue where Santa was able to jump multiple times in mid air. Kaboom provides a flag for easily checking weather a character is on the floor. We just needed to apply this flag to asimple if statement in our jumping code:
+<br>
+```
   //jump
   keyPress("space", () => {
   if (santa.isGrounded()) {
@@ -79,7 +83,7 @@ The game has fun upbeat retro
   play("jump");
   }
   });
-
+```
 <br>
 
 ### Validator Testing
