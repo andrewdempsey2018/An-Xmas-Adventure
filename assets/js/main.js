@@ -5,9 +5,10 @@ import present from "./present.js";
 import Tile from "./tile.js";
 import loadLevel from "./LoadLevel.js";
 import snowmanBig from "./snowmanBig.js";
+import effectMoveEnemy from "./effectMoveEnemy.js";
 
 /* load graphics and other assets */
-loadSprite("enemy", "./assets/sprites/enemy.png");
+loadSprite("effectMoveEnemy", "./assets/sprites/effectMoveEnemy.png");
 
 /* backgrounds for levels */
 loadSprite("countryside_night", "./assets/backgrounds/countryside_night.png");
@@ -55,7 +56,7 @@ const music = play("music", {
     loop: true
 })
 
-let levelFile = await loadLevel('map07');
+let levelFile = await loadLevel('demolevel');
 let level = new Level(levelFile);
 
 /* These are the tiles in each level data structure that are not
@@ -95,10 +96,10 @@ santa.onGround(() => {
 })
 
 onKeyRelease(["left", "right"], () => {
-	// Only reset to "idle" if player is not holding any of these keys
-	if (!isKeyDown("left") && !isKeyDown("right")) {
-		santa.play("idle")
-	}
+    // Only reset to "idle" if player is not holding any of these keys
+    if (!isKeyDown("left") && !isKeyDown("right")) {
+        santa.play("idle")
+    }
 })
 
 // camera follows player
@@ -113,8 +114,8 @@ keyDown("left", () => {
     santa.move(-WALK_SPEED, 0);
 
     if (santa.isGrounded() && santa.curAnim() !== "run") {
-		santa.play("run")
-	}
+        santa.play("run")
+    }
 });
 
 keyDown("right", () => {
@@ -122,8 +123,8 @@ keyDown("right", () => {
     santa.move(WALK_SPEED, 0);
 
     if (santa.isGrounded() && santa.curAnim() !== "run") {
-		santa.play("run")
-	}
+        santa.play("run")
+    }
 });
 
 //jump
@@ -139,6 +140,14 @@ keyPress("space", () => {
 onCollide("santa", "present", (santa, present) => {
     destroy(present);
     play("pickup");
+})
+
+/* call the various objects movement methods */
+
+action(() => {
+    level.getObjects.forEach(obj => {
+        obj.move();
+    })
 })
 
 /* TO DO collectables and enemies

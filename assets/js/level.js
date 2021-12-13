@@ -2,6 +2,7 @@ import k from "./kaboom.js"
 import present from "./present.js";
 import Tile from "./tile.js";
 import snowmanBig from "./snowmanBig.js";
+import effectMoveEnemy from "./effectMoveEnemy.js";
 
 class Level {
 
@@ -88,36 +89,42 @@ class Level {
                 sprite(tileNames[t.graphic]),
                 pos(t.x, t.y),
                 area(),
-                solid()
+                solid(),
+                'solidTile'
             ]);
         });
 
         /* populate level with entities */
 
-        const objects = new Set();
+        this.objects = new Set();
 
         objectLayerData.forEach(entity => {
 
             /* collectables */
             if(entity.type === 'blue_present') {
-                objects.add(new present(entity.x, entity.y, entity.type))
+                this.objects.add(new present(entity.x, entity.y, entity.type))
             }
 
             if(entity.type === 'green_present') {
-                objects.add(new present(entity.x, entity.y, entity.type))
+                this.objects.add(new present(entity.x, entity.y, entity.type))
             }
 
             if(entity.type === 'orange_present') {
-                objects.add(new present(entity.x, entity.y, entity.type))
+                this.objects.add(new present(entity.x, entity.y, entity.type))
             }
 
             if(entity.type === 'purple_present') {
-                objects.add(new present(entity.x, entity.y, entity.type))
+                this.objects.add(new present(entity.x, entity.y, entity.type))
             }
 
             /* big snowman enemy */
             if(entity.type === 'snowmanBig') {
-                objects.add(new snowmanBig(entity.x, entity.y))
+                this.objects.add(new snowmanBig(entity.x, entity.y))
+            }
+
+            /* invisible colliders for enemies to move back and forth */
+            if(entity.type === 'effectMoveEnemy') {
+                this.objects.add(new effectMoveEnemy(entity.x, entity.y))
             }
         })
 
@@ -131,8 +138,8 @@ class Level {
         return this.emptyLayer;
     }
 
-    get getEntities() {
-        return this.entities;
+    get getObjects() {
+        return this.objects;
     }
 }
 
