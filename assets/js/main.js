@@ -56,7 +56,7 @@ const music = play("music", {
     loop: true
 })
 
-let levelFile = await loadLevel('demolevel');
+let levelFile = await loadLevel('level1');
 let level = new Level(levelFile);
 
 /* These are the tiles in each level data structure that are not
@@ -108,6 +108,8 @@ santa.onUpdate(() => {
     //camPos(santa.pos)
 })
 
+let attack = false;
+
 // controls
 keyDown("left", () => {
     santa.flipX(true); //make santa sprite face left
@@ -150,6 +152,39 @@ action(() => {
     })
 })
 
+/* animate snowmen */
+const snowMen = get("snowmanBig");
+snowMen.forEach(snowMan => {
+    snowMan.play('walk');
+})
+
+onCollide("santa", "snowmanBig", () => {
+    if (!attack) {
+        santa.pos.x = 400;
+        santa.pos.y = 300;
+    }
+})
+
+/* Santa can destroy snowmen by jumping on their heads */
+onCollide("santa", "snowmanBig", (stnick, snowman) => {
+    if (attack) {
+        addKaboom(snowman.pos)
+        destroy(snowman);
+    
+    }
+    //play("pickup");
+})
+
+keyPress("z", () => {
+    santa.play("attack");
+    attack = true;
+});
+
+onKeyRelease("z", () => {
+    santa.play("idle")
+    attack = false;
+})
+
 /* TO DO collectables and enemies
 const ENEMY_SPEED = 50;
 let enemySpeedX = 10;
@@ -182,6 +217,8 @@ action(() => {
 
 });
 */
+
+
 
 
 

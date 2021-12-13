@@ -11,7 +11,7 @@ class Level {
         const tileNames = ['tile001', 'tile002', 'tile003', 'tile004', 'tile005',
             'tile006', 'tile007', 'tile008', 'tile009', 'tile010', 'tile011',
             'tile012', 'tile013', 'tile014', 'tile015', 'tile016', 'tile017',
-            'tile018', 'tile019', 'tile020'];
+            'tile018', 'tile019', 'tile020', 'tile021'];
 
         const tileSprites = new Set();
 
