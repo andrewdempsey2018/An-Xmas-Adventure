@@ -9,9 +9,7 @@ loadSprite("snowmanBig", "./assets/sprites/snowmen/evilSnowmanFrames.png", {
         "walk": {
             // Starts from frame 0, ends at frame 2
             from: 0,
-            to: 1,
-            to: 2,
-            to: 1,
+            to: 3,
             speed: 3,
             loop: true,
         },
@@ -30,7 +28,7 @@ class snowmanBig {
         this.xSpeed = 50;
 
         this.walkDistance = 0;
-        this.flipValue = false;
+        this.flipValue = true;
 
         this.spr = k.add([
             k.sprite("snowmanBig"),
