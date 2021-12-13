@@ -71,6 +71,9 @@ The game has fun upbeat retro
   play("jump");
   }
   });
+- We had an issue with some images not appearing on the README in Github.
+
+![]()
 
 <br>
 
