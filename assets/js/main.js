@@ -5,6 +5,7 @@ import present from "./present.js";
 import Tile from "./tile.js";
 import loadLevel from "./LoadLevel.js";
 import snowmanBig from "./snowmanBig.js";
+import snowmanMinnion from "./snowmanMinnion.js";
 import effectMoveEnemy from "./effectMoveEnemy.js";
 
 /* load graphics and other assets */
@@ -47,6 +48,7 @@ const WALK_SPEED = 200
 /* sound effects */
 loadSound("jump", "./assets/sfx/jump.wav");
 loadSound("pickup", "./assets/sfx/pickup.wav");
+loadSound("hit", "./assets/sfx/hit.wav");
 
 /* music */
 loadSound("music", "./assets/music/jingle.mp3");
@@ -158,6 +160,11 @@ snowMen.forEach(snowMan => {
     snowMan.play('walk');
 })
 
+const snowMenMinnion = get("snowmanMinnion");
+snowMenMinnion.forEach(snowManMinnion => {
+    snowManMinnion.play('walk');
+})
+
 onCollide("santa", "snowmanBig", () => {
     if (!attack) {
         santa.pos.x = 400;
@@ -165,14 +172,28 @@ onCollide("santa", "snowmanBig", () => {
     }
 })
 
-/* Santa can destroy snowmen by jumping on their heads */
+onCollide("santa", "snowmanMinnion", () => {
+    if (!attack) {
+        santa.pos.x = 400;
+        santa.pos.y = 300;
+    }
+})
+
+/* The result of a Santa attack on enemies */
 onCollide("santa", "snowmanBig", (stnick, snowman) => {
+    if (attack) {
+        addKaboom(snowman.pos);
+        destroy(snowman);
+        play("hit");
+    }
+})
+
+onCollide("santa", "snowmanMinnion", (stnick, snowman) => {
     if (attack) {
         addKaboom(snowman.pos)
         destroy(snowman);
-    
+        play("hit");
     }
-    //play("pickup");
 })
 
 keyPress("z", () => {

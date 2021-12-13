@@ -1,7 +1,7 @@
 import k from "./kaboom.js"
 
 /* load image and extract frames */
-loadSprite("snowmanBig", "./assets/sprites/snowmen/evilSnowmanFrames.png", {
+loadSprite("snowmanMinnion", "./assets/sprites/snowmen/minionSnowmanFrames.png", {
     sliceX: 4,
     // Define animations
     anims: {
@@ -13,12 +13,11 @@ loadSprite("snowmanBig", "./assets/sprites/snowmen/evilSnowmanFrames.png", {
             speed: 3,
             loop: true,
         },
-        "hit": 3
     }
 })
 
 
-class snowmanBig {
+class snowmanMinnion {
 
     constructor(xPos, yPos) {
         this.xPos = xPos;
@@ -30,12 +29,12 @@ class snowmanBig {
         this.flipValue = true;
 
         this.spr = k.add([
-            k.sprite("snowmanBig"),
+            k.sprite("snowmanMinnion"),
             k.pos(this.xPos, this.yPos),
             k.origin("bot"),
             k.area(),
             k.body(),
-            "snowmanBig"
+            "snowmanMinnion"
         ]);
     }
 
@@ -44,7 +43,7 @@ class snowmanBig {
 
         this.walkDistance += 1;
 
-        if (this.walkDistance >= 250) {
+        if (this.walkDistance >= 50) {
             this.walkDistance = 0;
             this.xSpeed *= -1;
             this.flipValue = !this.flipValue;
@@ -53,4 +52,4 @@ class snowmanBig {
     };
 }
 
-export default snowmanBig;
+export default snowmanMinnion;
