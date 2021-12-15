@@ -8,11 +8,17 @@ import snowmanBig from "./snowmanBig.js";
 import snowmanMinnion from "./snowmanMinnion.js";
 import effectMoveEnemy from "./effectMoveEnemy.js";
 
+
 /* load graphics and other assets */
 loadSprite("effectMoveEnemy", "./assets/sprites/effectMoveEnemy.png");
 
 /* backgrounds for levels */
 loadSprite("countryside_night", "./assets/backgrounds/countryside_night.png");
+
+//set up the game screen area
+keyPress("f", () => {
+    fullscreen(!isFullscreen())
+});
 
 /* get the santa frames file and slice it in 7 pieces
 the frames file is 336 pixels wide so this amounts to 7 frames
