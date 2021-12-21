@@ -2,6 +2,17 @@
 
 Live site: https://andrewdempsey2018.github.io/An-Xmas-Adventure/
 
+## Code Institute Hackathon Entry - December 2021 (December 9th - 13th)
+
+### Team Members:
+
+- Andrew Dempsey
+- Christopher Undritz
+- Aws Sabah Gheni
+- Nikoletta Michailidou
+
+This game is continuing to be developed following completion of the hackathon. Please check back for updates!
+
 <p align="center"><img src="./assets/readme/readme_header.png" alt="readme header" width="1000"/></p>
 DISASTER!!! It's Chrismas Eve and the forces of evil have succeeded in their nefarious quest to destroy Christmas! Using their patented ReindeerMind technology, they confused Rudolph just enough for the Santa to loose control of the sleigh resulting in all the presents being lost, falling to earth! Santa must now combat the forces of evil to collect all the presents and save Christmas!  
 </br>
