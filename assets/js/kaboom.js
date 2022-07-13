@@ -1,5 +1,5 @@
 // import kaboom lib
-import kaboom from "https://unpkg.com/kaboom@next/dist/kaboom.mjs";
+import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
 
 // initialize kaboom context
 export const k = kaboom({
